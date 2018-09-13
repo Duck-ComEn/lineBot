@@ -2,6 +2,27 @@
   "functions": {
     "predeploy": [
       "npm --prefix \"functions\" run lint"
+    ],
+    "source": "functions"
+  },
+  "database": {
+    "rules": "database.rules.json"
+  },
+  "hosting": {
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
     ]
+  },
+  "storage": {
+    "rules": "storage.rules"
   }
 }
